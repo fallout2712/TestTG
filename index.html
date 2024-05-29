@@ -1,42 +1,28 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | TestTelegram</title>
-  </head>
-  <body style="text-align: center; padding: 0; border: 0; margin: 0; overflow: hidden;">
+</head>
+<body style="text-align: center; padding: 0; border: 0; margin: 0; overflow: hidden;">
     <canvas id="unity-canvas" width=1920 height=1080 tabindex="-1" style="width: 100vw; height: 100vh; background: var(--tg-theme-bg-color); color: var(--tg-theme-text-color)"></canvas>
     <script src="Build/Build.loader.js"></script>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script>
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        var meta = document.createElement('meta');
-        meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-        document.getElementsByTagName('head')[0].appendChild(meta);
+    <script type="module">
+        import { initializeTelegramUnity } from './telegram-integration.js';
 
-        var canvas = document.querySelector("#unity-canvas");
-        canvas.style.width = "100%";
-        canvas.style.height = "100%";
-        canvas.style.position = "fixed";
-
-        document.body.style.textAlign = "left";
-      }
-
-      createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build/Build.data",
-        frameworkUrl: "Build/Build.framework.js",
-        codeUrl: "Build/Build.wasm",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "DefaultCompany",
-        productName: "TestTelegram",
-        productVersion: "1.0",
-      }).then((unityInstance) => {
-        const tg = window.Telegram.WebApp;
-        const username = tg.initDataUnsafe?.user?.username || "No username";
-        unityInstance.SendMessage('TelegramIntegration', 'SetTelegramUsername', username);
-      });
+        window.addEventListener('load', () => {
+            createUnityInstance(document.querySelector("#unity-canvas"), {
+                dataUrl: "Build/Build.data",
+                frameworkUrl: "Build/Build.framework.js",
+                codeUrl: "Build/Build.wasm",
+                streamingAssetsUrl: "StreamingAssets",
+                companyName: "DefaultCompany",
+                productName: "TestTelegram",
+                productVersion: "1.0",
+            }).then(initializeTelegramUnity);
+        });
     </script>
-  </body>
+</body>
 </html>

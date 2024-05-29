@@ -1,8 +1,7 @@
-function sendValuesToUnity() {
-    var name = "ТестТг";
-    let number = 10;
-    const someText = "bal bla bla";
-
-    var data = JSON.stringify({ name: name, number: number, someText: someText });
-    UnitySendMessage("test", "SetValues", data);
+function callUnityMethod() {
+    // Get the instance of the Unity object
+    var unityInstance = unityInstance || UnityLoader.instantiate("unityContainer", "Build/Build.json", {onProgress: UnityProgress});
+    
+    // Call the Unity method
+    unityInstance.SendMessage('test', 'CallHello');
 }

@@ -6,12 +6,11 @@
     <title>Unity WebGL Player | TestTelegram</title>
   </head>
   <body style="text-align: center; padding: 0; border: 0; margin: 0; overflow: hidden;">
-    <canvas id="unity-canvas" width=1920 height=1080 tabindex="-1" style="width: 100vw; height: 100vh; background: #231F20"></canvas>
+    <canvas id="unity-canvas" width=1920 height=1080 tabindex="-1" style="width: 100vw; height: 100vh; background: var(--tg-theme-bg-color); color: var(--tg-theme-text-color)"></canvas>
     <script src="Build/Build.loader.js"></script>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        // Mobile device style: fill the whole browser client area with the game canvas:
         var meta = document.createElement('meta');
         meta.name = 'viewport';
         meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
@@ -33,8 +32,10 @@
         companyName: "DefaultCompany",
         productName: "TestTelegram",
         productVersion: "1.0",
-        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
-        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+      }).then((unityInstance) => {
+        const tg = window.Telegram.WebApp;
+        const username = tg.initDataUnsafe?.user?.username || "No username";
+        unityInstance.SendMessage('TelegramIntegration', 'SetTelegramUsername', username);
       });
     </script>
   </body>

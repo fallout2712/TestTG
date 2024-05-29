@@ -9,6 +9,7 @@
   <canvas id="unity-canvas" width=720 height=1280 tabindex="-1"
     style="width: 720px; height: 1280px; background: #231F20"></canvas>
   <script src="Build/Build.loader.js"></script>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <script>
     if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
       // Mobile device style: fill the whole browser client area with the game canvas:
@@ -37,7 +38,9 @@
       // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
     }).then(function (unityInstance) {
       // Вызов вашего метода SendMessage
-      unityInstance.SendMessage('Scripts', 'TestF');
+      const tg = window.Telegram.WebApp;
+      var idus = initDataUnsafe?.user.id;
+      unityInstance.SendMessage('Scripts', 'TestF', idus);
     });
   </script>
 </body>

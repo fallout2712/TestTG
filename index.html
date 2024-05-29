@@ -39,7 +39,7 @@
     }).then(function (unityInstance) {
       // Вызов вашего метода SendMessage
       const tg = window.Telegram.WebApp;
-      var idus = initDataUnsafe?.user.id;
+      var idus = initDataUnsafe?.user?.first_name;
       unityInstance.SendMessage('Scripts', 'TestF', idus);
     });
   </script>

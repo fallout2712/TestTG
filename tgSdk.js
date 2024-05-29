@@ -4,5 +4,5 @@ function sendValuesToUnity() {
     const someText = "bal bla bla";
 
     var data = JSON.stringify({ name: name, number: number, someText: someText });
-    UnitySendMessage("YourUnityObjectName", "SetValues", data);
+    UnitySendMessage("test", "SetValues", data);
 }

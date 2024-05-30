@@ -1,12 +1,15 @@
 // unity-method.js
 const tg = window.Telegram.WebApp;
 function sendMessageToUnity(unityInstance) {
-    tg.ready();
-    tg.expand();
-    var idTg = tg.initDataUnsafe?.user?.id;
-    var fnTg = tg.initDataUnsafe?.user?.first_name;
-    var lnTg = tg.initDataUnsafe?.user?.last_name;
-    unityInstance.SendMessage('Scripts', 'TestF', "Hello my little friend v 2");
-    unityInstance.SendMessage('Scripts', 'TestF', fnTg + " " + lnTg);
-    unityInstance.SendMessage('Scripts', 'TestFInt', idTg);
-  }
+  tg.ready();
+  tg.expand();
+
+  var tgId = tg.initDataUnsafe?.user?.id;
+  var tgFn = tg.initDataUnsafe?.user?.first_name;
+  var tgLn = tg.initDataUnsafe?.user?.last_name;
+
+  unityInstance.SendMessage('TG_info', 'SetId', tgId);
+  unityInstance.SendMessage('TG_info', 'SetFirstName', tgFn);
+  unityInstance.SendMessage('TG_info', 'SetLastName', tgLn);
+  unityInstance.SendMessage('TG_info', 'SetTgInit');
+}

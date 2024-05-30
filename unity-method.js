@@ -3,8 +3,8 @@ const tg = window.Telegram.WebApp;
 function sendMessageToUnity(unityInstance) {
   tg.ready();
   tg.expand();
-  tg.setHeaderColor("black");
-  tg.setBackgroundColor("black");
+  tg.setHeaderColor("#000000");
+  tg.setBackgroundColor("#000000");
 
   var tgId = tg.initDataUnsafe?.user?.id;
   var tgFn = tg.initDataUnsafe?.user?.first_name;

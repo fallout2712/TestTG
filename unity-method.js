@@ -21,41 +21,9 @@ function sendMessageToUnity(unityInstance) {
 }
 
 function shareToTelegramLink() {
-  copyToClipboard(tgLink);
-}
-
-function copyToClipboard(text) {
-  if (navigator.clipboard && window.isSecureContext) {
-    // navigator.clipboard API доступен
-    navigator.clipboard.writeText(text).then(function () {
-      console.log('Ссылка скопирована в буфер обмена');
-    }).catch(function (err) {
-      console.error('Не удалось скопировать текст: ', err);
-    });
-  } else {
-    // fallback для старых браузеров
-    let textArea = document.createElement("textarea");
-    textArea.value = text;
-    // избегаем прокрутки на iOS устройствах
-    textArea.style.position = "fixed";
-    textArea.style.top = 0;
-    textArea.style.left = 0;
-    textArea.style.width = '2em';
-    textArea.style.height = '2em';
-    textArea.style.padding = 0;
-    textArea.style.border = 'none';
-    textArea.style.outline = 'none';
-    textArea.style.boxShadow = 'none';
-    textArea.style.background = 'transparent';
-    document.body.appendChild(textArea);
-    textArea.focus();
-    textArea.select();
-    try {
-      document.execCommand('copy');
-      console.log('Ссылка скопирована в буфер обмена');
-    } catch (err) {
-      console.error('Не удалось скопировать текст: ', err);
-    }
-    document.body.removeChild(textArea);
-  }
+  navigator.clipboard.writeText(tgLink).then(function () {
+    alert('Ссылка скопирована: ' + tgLink);
+  }).catch(function (err) {
+    console.error('Ошибка при копировании: ', err);
+  });
 }

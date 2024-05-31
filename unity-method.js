@@ -21,16 +21,8 @@ function sendMessageToUnity(unityInstance) {
 }
 
 function shareToTelegramLink() {
+  alert('Please press Ctrl+C (Cmd+C on Mac) to copy the link.');
   var link = 'https://t.me/SwixyKeyDrop_bot';
-  copyTextToClipboard(link);
-}
-
-function copyTextToClipboard(text) {
-  var input = document.createElement('input');
-  input.setAttribute('value', text);
-  document.body.appendChild(input);
-  input.select();
-  document.execCommand('copy');
-  document.body.removeChild(input);
+  prompt('Copy the link:', link);
 }
 

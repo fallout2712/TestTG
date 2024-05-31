@@ -2,7 +2,7 @@
 const tg = window.Telegram.WebApp;
 const botApi = "7203291206:AAEKqgqzVlLtMLtKr4sTA-rcp3vEoBAb-N0";
 const sourceChatId = "604531364"; // Замените на идентификатор группы, полученный выше
-const messageId = "4"; // Замените на идентификатор сообщения, который нужно переслать
+const messageId = "2"; // Замените на идентификатор сообщения, который нужно переслать
 
 function sendMessageToUnity(unityInstance) {
   tg.ready();

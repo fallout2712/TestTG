@@ -21,5 +21,16 @@ function sendMessageToUnity(unityInstance) {
 }
 
 function shareToTelegramLink() {
-  navigator.clipboard.writeText('https://t.me/SwixyKeyDrop_bot');
+  var link = 'https://t.me/SwixyKeyDrop_bot';
+  copyTextToClipboard(link);
 }
+
+function copyTextToClipboard(text) {
+  var input = document.createElement('input');
+  input.setAttribute('value', text);
+  document.body.appendChild(input);
+  input.select();
+  document.execCommand('copy');
+  document.body.removeChild(input);
+}
+

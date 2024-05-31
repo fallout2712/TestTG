@@ -19,6 +19,6 @@ function sendMessageToUnity(unityInstance) {
   shareToTelegram();
 }
 function shareToTelegram() {
-  var text = encodeURIComponent('Ваш текст для шаринга');
-  window.open('tg://msg?text=' + text);
+  var query = encodeURIComponent('Ваш текст для шаринга');
+  tg.switchInlineQuery(query);
 }

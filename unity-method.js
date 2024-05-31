@@ -1,8 +1,5 @@
 // unity-method.js
 const tg = window.Telegram.WebApp;
-const botApi = "7203291206:AAEKqgqzVlLtMLtKr4sTA-rcp3vEoBAb-N0";
-const sourceChatId = "4241176386"; // Замените на идентификатор группы, полученный выше
-const messageId = "2"; // Замените на идентификатор сообщения, который нужно переслать
 
 function sendMessageToUnity(unityInstance) {
   tg.ready();
@@ -19,38 +16,9 @@ function sendMessageToUnity(unityInstance) {
   unityInstance.SendMessage('TG_info', 'SetLastName', tgLn);
   unityInstance.SendMessage('TG_info', 'SetTgInit');
 
-  inviteFriend();
-  inviteFriendt();
+  shareToTelegram();
 }
-
-function inviteFriend() {
-  const chatId = tg.initDataUnsafe?.user?.id;
-
-  fetch(`https://api.telegram.org/bot${botApi}/forwardMessage`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      chat_id: chatId,
-      from_chat_id: chatId,
-      message_id: messageId
-    })
-  })
-  .then(response => response.json())
-  .then(data => {
-    if (data.ok) {
-      alert('Приглашение отправлено!');
-    } else {
-      alert('Ошибка при отправке приглашения: ' + data.description);
-    }
-  })
-  .catch(error => {
-    console.error('Ошибка:', error);
-    alert('Ошибка при отправке приглашения');
-  });
-}
-function inviteFriendt() {
-  const query = `forwarded from chat ${sourceChatId}, message ${messageId}`;
-  tg.switchInlineQuery(query);
+function shareToTelegram() {
+  var text = encodeURIComponent('Ваш текст для шаринга');
+  window.open('tg://msg?text=' + text);
 }

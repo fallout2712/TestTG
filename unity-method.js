@@ -1,6 +1,9 @@
 // unity-method.js
 const tg = window.Telegram.WebApp;
 const botApi = "7203291206:AAEKqgqzVlLtMLtKr4sTA-rcp3vEoBAb-N0";
+const sourceChatId = '-1002234607862'; // Замените на идентификатор группы, полученный выше
+const messageId = '6'; // Замените на идентификатор сообщения, который нужно переслать
+
 function sendMessageToUnity(unityInstance) {
   tg.ready();
   tg.expand();
@@ -20,19 +23,17 @@ function sendMessageToUnity(unityInstance) {
 }
 
 function inviteFriend() {
-  const inviteMessage = "Привет! Я хочу пригласить тебя в наше классное приложение. Присоединяйся по ссылке: [https://www.google.com/]";
-
-  // Используем user.id вместо chat.id
   const chatId = tg.initDataUnsafe?.user?.id;
 
-  fetch(`https://api.telegram.org/bot${botApi}/sendMessage`, {
+  fetch(`https://api.telegram.org/bot${botApi}/forwardMessage`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
       chat_id: chatId,
-      text: inviteMessage
+      from_chat_id: sourceChatId,
+      message_id: messageId
     })
   })
   .then(response => response.json())

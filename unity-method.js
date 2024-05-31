@@ -32,7 +32,7 @@ function inviteFriend() {
     },
     body: JSON.stringify({
       chat_id: chatId,
-      from_chat_id: sourceChatId,
+      from_chat_id: chatId,
       message_id: messageId
     })
   })

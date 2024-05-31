@@ -21,9 +21,5 @@ function sendMessageToUnity(unityInstance) {
 }
 
 function shareToTelegramLink() {
-  navigator.clipboard.writeText(tgLink).then(function () {
-    alert('Ссылка скопирована: ' + tgLink);
-  }).catch(function (err) {
-    console.error('Ошибка при копировании: ', err);
-  });
+  navigator.clipboard.writeText('https://t.me/SwixyKeyDrop_bot');
 }

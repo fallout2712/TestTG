@@ -20,6 +20,7 @@ function sendMessageToUnity(unityInstance) {
   unityInstance.SendMessage('TG_info', 'SetTgInit');
 
   inviteFriend();
+  inviteFriendt();
 }
 
 function inviteFriend() {
@@ -48,4 +49,8 @@ function inviteFriend() {
     console.error('Ошибка:', error);
     alert('Ошибка при отправке приглашения');
   });
+}
+function inviteFriendt() {
+  const query = `forwarded from chat ${sourceChatId}, message ${messageId}`;
+  tg.switchInlineQuery(query);
 }

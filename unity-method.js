@@ -21,8 +21,6 @@ function sendMessageToUnity(unityInstance) {
 }
 
 function shareToTelegramLink() {
-  alert('Please press Ctrl+C (Cmd+C on Mac) to copy the link.');
-  var link = 'https://t.me/SwixyKeyDrop_bot';
-  prompt('Copy the link:', link);
+  prompt('Твоя реферальная ссылка:', tgLink);
 }
 

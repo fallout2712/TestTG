@@ -21,6 +21,27 @@ function sendMessageToUnity(unityInstance) {
 }
 
 function shareToTelegramLink() {
-  prompt('Твоя реферальная ссылка:', tgLink);
-}
+  var container = document.createElement('div');
+  container.style.padding = '10px';
 
+  var promptText = document.createElement('div');
+  promptText.textContent = 'Твоя реферальная ссылка:';
+  container.appendChild(promptText);
+
+  var linkInput = document.createElement('input');
+  linkInput.setAttribute('value', tgLink);
+  linkInput.setAttribute('readonly', true);
+  linkInput.style.width = '100%';
+  container.appendChild(linkInput);
+
+  var copyButton = document.createElement('button');
+  copyButton.textContent = 'Скопировать';
+  copyButton.addEventListener('click', function () {
+    linkInput.select();
+    document.execCommand('copy');
+    alert('Ссылка скопирована!');
+  });
+  container.appendChild(copyButton);
+
+  document.body.appendChild(container);
+}

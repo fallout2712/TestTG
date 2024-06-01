@@ -18,5 +18,5 @@ function sendMessageToUnity(unityInstance) {
   unityInstance.SendMessage('TG_info', 'SetTgInit');
 
     // Debug message
-  console.log("Our app-kaaaa version is 0.1");
+  console.log("Our app-kaaaa version is 0.2");
 }

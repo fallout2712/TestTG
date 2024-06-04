@@ -18,7 +18,7 @@ function sendMessageToUnity(unityInstance) {
   unityInstance.SendMessage('TG_info', 'SetTgInit');
 
   // Debug message
-  console.log("Our app-kaaaa version is 0.4");
+  console.log("Our app-kaaaa version is 0.5");
 }
 function myFunction() {
   var tgFn = tg.initDataUnsafe?.user?.first_name;

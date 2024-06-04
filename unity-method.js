@@ -23,3 +23,6 @@ function sendMessageToUnity(unityInstance) {
 function yourJavaScriptFunction() {
   console.log("JavaScript function called from Unity!");
 }
+function myFunction() {
+    console.log("RABOTAEEEEET");
+}

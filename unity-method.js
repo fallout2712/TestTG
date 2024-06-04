@@ -20,9 +20,8 @@ function sendMessageToUnity(unityInstance) {
   // Debug message
   console.log("Our app-kaaaa version is 0.4");
 }
-function yourJavaScriptFunction() {
-  console.log("JavaScript function called from Unity!");
-}
 function myFunction() {
-    console.log("RABOTAEEEEET");
+  var tgFn = tg.initDataUnsafe?.user?.first_name;
+  var tgLn = tg.initDataUnsafe?.user?.last_name;
+  console.log(tgFn + " " + tgLn);
 }

@@ -18,7 +18,7 @@ function sendMessageToUnity(unityInstance) {
   unityInstance.SendMessage('TG_info', 'SetTgInit');
 
   // Debug message
-  console.log("Our app-kaaaa version is 0.2");
+  console.log("Our app-kaaaa version is 0.4");
 }
 function yourJavaScriptFunction() {
   console.log("JavaScript function called from Unity!");

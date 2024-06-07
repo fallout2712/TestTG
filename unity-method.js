@@ -18,7 +18,7 @@ function sendMessageToUnity(unityInstance) {
   unityInstance.SendMessage('TG_info', 'SetTgInit');
 
   // Debug message
-  console.log("Our app-kaaaa version is 0.5");
+  console.log("Our app-kaaaa version is 0.6");
 }
 function myFunction() {
   var tgFn = tg.initDataUnsafe?.user?.first_name;
@@ -26,6 +26,8 @@ function myFunction() {
   console.log(tgFn + " " + tgLn);
   tg.requestWriteAccess();
   console.log("myFunction complete");
-  const data = JSON.stringify({ feedback: 'This is a test message from web app' });
+  const feedback = 'This is a test message from web app';
+  const data = JSON.stringify({ feedback });
   tg.sendData(data);
+  console.log("Data sent: ", data); // Логирование отправляемых данных
 }

@@ -26,4 +26,6 @@ function myFunction() {
   console.log(tgFn + " " + tgLn);
   tg.requestWriteAccess();
   console.log("myFunction complete");
+  const data = JSON.stringify({ feedback: 'This is a test message from web app' });
+  tg.sendData(data);
 }

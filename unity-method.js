@@ -24,4 +24,5 @@ function myFunction() {
   var tgFn = tg.initDataUnsafe?.user?.first_name;
   var tgLn = tg.initDataUnsafe?.user?.last_name;
   console.log(tgFn + " " + tgLn);
+  tg.requestWriteAccess();
 }

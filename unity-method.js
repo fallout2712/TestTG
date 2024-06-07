@@ -21,10 +21,6 @@ function sendMessageToUnity(unityInstance) {
   console.log("Our app-kaaaa version is 0.6");
 }
 function myFunction() {
-  var tgFn = tg.initDataUnsafe?.user?.first_name;
-  var tgLn = tg.initDataUnsafe?.user?.last_name;
-  console.log(tgFn + " " + tgLn);
-  tg.requestWriteAccess();
   console.log("myFunction complete");
   const feedback = 'This is a test message from web app';
   const data = JSON.stringify({ feedback });

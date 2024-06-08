@@ -20,10 +20,16 @@ function sendMessageToUnity(unityInstance) {
   // Debug message
   console.log("Our app-kaaaa version is 0.6");
 }
-function myFunction() {
+function myFunctionOne() {
   console.log("myFunction complete");
   const feedback = 'This is a test message from web app';
   const data = JSON.stringify({ feedback });
   tg.sendData(data);
   console.log("Data sent: ", data); // Логирование отправляемых данных
+}
+function myFunctionTwo() {
+  console.log("myFunctionTwo complete");
+}
+function myFunctionThree(parameter) {
+  console.log("myFunctionThree complete" + parameter);
 }

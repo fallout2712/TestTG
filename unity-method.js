@@ -29,7 +29,7 @@ function myFunctionOne() {
 }
 function myFunctionTwo() {
   const query = 'Test'; // Ваш запрос
-  const choose_chat_types = ['user', 'group']; // Корректные типы чатов
+  const choose_chat_types = ['users', 'groups', 'channels']; // Корректные типы чатов
   tg.switchInlineQuery(query, choose_chat_types);
   console.log("myFunctionTwo complete");
 }

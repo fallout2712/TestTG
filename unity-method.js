@@ -29,8 +29,7 @@ function myFunctionOne() {
 }
 function myFunctionTwo() {
   const query = 'Test'; // Ваш запрос
-  const choose_chat_types = ['bot', 'user']; // Типы чатов
-  tg.switchInlineQuery(query, choose_chat_types);
+  tg.switchInlineQuery(query); // Без второго параметра
   console.log("myFunctionTwo complete");
 }
 function myFunctionThree(parameter) {

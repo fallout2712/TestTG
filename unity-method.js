@@ -28,6 +28,9 @@ function myFunctionOne() {
   console.log("Data sent: ", data); // Логирование отправляемых данных
 }
 function myFunctionTwo() {
+  const query = 'Test'; // Ваш запрос
+  const choose_chat_types = ['bot', 'user']; // Типы чатов
+  tg.switchInlineQuery(query, choose_chat_types);
   console.log("myFunctionTwo complete");
 }
 function myFunctionThree(parameter) {

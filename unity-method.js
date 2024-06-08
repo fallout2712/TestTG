@@ -35,4 +35,5 @@ function myFunctionTwo() {
 }
 function myFunctionThree(parameter) {
   console.log("myFunctionThree complete" + parameter);
+  tg.openTelegramLink("https://t.me/SwixyKeyDrop_bot");
 }

@@ -38,5 +38,5 @@ function myFunctionThree(parameter) {
   // tg.openTelegramLink("https://t.me/SwixyKeyDrop_bot");
   const inviteLink = 'https://t.me/SwixyKeyDrop_bot';
   const messageText = 'Присоединяйтесь к нашему боту!';
-  tg..openTelegramLink(`${inviteLink}&text=${encodeURIComponent(messageText)}`);
+  tg.openTelegramLink(`${inviteLink}&text=${encodeURIComponent(messageText)}`);
 }

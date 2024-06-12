@@ -18,7 +18,7 @@ function sendMessageToUnity(unityInstance) {
   unityInstance.SendMessage('TG_info', 'SetTgInit');
 
   // Debug message
-  console.log("Our app-kaaaa version is 0.6");
+  console.log("Our app-kaaaa version is 0.7");
 }
 function myFunctionOne() {
   console.log("myFunction complete");
@@ -34,6 +34,9 @@ function myFunctionTwo() {
   console.log("myFunctionTwo complete");
 }
 function myFunctionThree(parameter) {
-  console.log("myFunctionThree complete" + parameter);
-  tg.openTelegramLink("https://t.me/SwixyKeyDrop_bot");
+  // console.log("myFunctionThree complete" + parameter);
+  // tg.openTelegramLink("https://t.me/SwixyKeyDrop_bot");
+  const inviteLink = 'https://t.me/SwixyKeyDrop_bot';
+  const messageText = 'Присоединяйтесь к нашему боту!';
+  tg..openTelegramLink(`${inviteLink}&text=${encodeURIComponent(messageText)}`);
 }

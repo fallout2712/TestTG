@@ -36,5 +36,5 @@ function myFunctionTwo() {
 function myFunctionThree(parameter) {
   console.log("myFunctionThree complete" + parameter);
   const messageText = "https://t.me/SwixyKeyDrop_bot";
-  tg.openTelegramLink("https://t.me/share/url?url=${messageText}&text=");
+  tg.openTelegramLink("https://t.me/share/url?url=messageText&text=");
 }

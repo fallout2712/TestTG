@@ -34,9 +34,6 @@ function myFunctionTwo() {
   console.log("myFunctionTwo complete");
 }
 function myFunctionThree(parameter) {
-  // console.log("myFunctionThree complete" + parameter);
-  // tg.openTelegramLink("https://t.me/SwixyKeyDrop_bot");
-  const inviteLink = 'https://t.me/SwixyKeyDrop_bot';
-  const messageText = 'Присоединяйтесь к нашему боту!';
-  tg.openTelegramLink(`${inviteLink}&text=${encodeURIComponent(messageText)}`);
+  console.log("myFunctionThree complete" + parameter);
+  tg.openTelegramLink("https://t.me/share/url?url=${textToCopy}&text=");
 }

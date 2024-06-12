@@ -33,7 +33,7 @@ function myFunctionTwo() {
   // tg.switchInlineQuery(query, choose_chat_types);
   // console.log("myFunctionTwo complete");
   const text = "Ваше сообщение"; // Текст сообщения, который хотите переслать
-  const url = `tg://msg_url?text=${encodeURIComponent(text)}`;
+  const url = `https://t.me/SwixyKeyDrop_bot`;
 
   tg.openTelegramLink(url);
   console.log("Forward menu opened");

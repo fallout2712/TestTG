@@ -32,9 +32,6 @@ function myFunctionTwo() {
   const choose_chat_types = ['users', 'groups', 'channels']; // Корректные типы чатов
   tg.switchInlineQuery(query, choose_chat_types);
   console.log("myFunctionTwo complete");
-
-  tg.openTelegramLink(url);
-  console.log("Forward menu opened");
 }
 function myFunctionThree(parameter) {
   console.log("myFunctionThree complete" + parameter);

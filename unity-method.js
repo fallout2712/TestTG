@@ -28,10 +28,15 @@ function myFunctionOne() {
   console.log("Data sent: ", data); // Логирование отправляемых данных
 }
 function myFunctionTwo() {
-  const query = 'Test'; // Ваш запрос
-  const choose_chat_types = ['users', 'groups', 'channels']; // Корректные типы чатов
-  tg.switchInlineQuery(query, choose_chat_types);
-  console.log("myFunctionTwo complete");
+  // const query = 'Test'; // Ваш запрос
+  // const choose_chat_types = ['users', 'groups', 'channels']; // Корректные типы чатов
+  // tg.switchInlineQuery(query, choose_chat_types);
+  // console.log("myFunctionTwo complete");
+  const text = "Ваше сообщение"; // Текст сообщения, который хотите переслать
+  const url = `tg://msg_url?text=${encodeURIComponent(text)}`;
+
+  tg.openTelegramLink(url);
+  console.log("Forward menu opened");
 }
 function myFunctionThree(parameter) {
   console.log("myFunctionThree complete" + parameter);

@@ -28,12 +28,10 @@ function myFunctionOne() {
   console.log("Data sent: ", data); // Логирование отправляемых данных
 }
 function myFunctionTwo() {
-  // const query = 'Test'; // Ваш запрос
-  // const choose_chat_types = ['users', 'groups', 'channels']; // Корректные типы чатов
-  // tg.switchInlineQuery(query, choose_chat_types);
-  // console.log("myFunctionTwo complete");
-  const text = "Ваше сообщение"; // Текст сообщения, который хотите переслать
-  const url = `https://t.me/SwixyKeyDrop_bot`;
+  const query = 'Test'; // Ваш запрос
+  const choose_chat_types = ['users', 'groups', 'channels']; // Корректные типы чатов
+  tg.switchInlineQuery(query, choose_chat_types);
+  console.log("myFunctionTwo complete");
 
   tg.openTelegramLink(url);
   console.log("Forward menu opened");

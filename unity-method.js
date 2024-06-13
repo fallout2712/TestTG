@@ -39,3 +39,9 @@ function myFunctionThree(parameter) {
   const telegramLink = `https://t.me/share/url?url=${encodeURIComponent(messageText)}&text=`;
   tg.openTelegramLink(telegramLink);
 }
+function inviteFriend() {
+  console.log("inviteFriend complete");
+  const messageText = "https://t.me/SwixyKeyDrop_bot";
+  const telegramLink = `https://t.me/share/url?url=${encodeURIComponent(messageText)}&text=`;
+  tg.openTelegramLink(telegramLink);
+}

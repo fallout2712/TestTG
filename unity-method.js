@@ -12,9 +12,8 @@ function sendMessageToUnity(unityInstance) {
   var tgFn = tg.initDataUnsafe?.user?.first_name;
   var tgLn = tg.initDataUnsafe?.user?.last_name;
 
-  // Получаем параметр из URL
-  var urlParams = new URLSearchParams(window.location.search);
-  var startParam = urlParams.get('start');
+  var initData = tg.initDataUnsafe;  
+  var startParam = initData.start_param;
 
   unityInstance.SendMessage('TG_info', 'SetId', tgId);
   unityInstance.SendMessage('TG_info', 'SetFirstName', tgFn);

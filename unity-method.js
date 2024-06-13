@@ -18,11 +18,11 @@ function sendMessageToUnity(unityInstance) {
   unityInstance.SendMessage('TG_info', 'SetId', tgId);
   unityInstance.SendMessage('TG_info', 'SetFirstName', tgFn);
   unityInstance.SendMessage('TG_info', 'SetLastName', tgLn);
-  unityInstance.SendMessage('TG_info', 'PassedValueUrl', startParam);
+  //unityInstance.SendMessage('TG_info', 'PassedValueUrl', startParam);
   unityInstance.SendMessage('TG_info', 'SetTgInit'); // Передаем параметр в Unity
 
   // Debug message
-  console.log("Our app-kaaaa version is 0.7");
+  console.log("Our app-kaaaa version is 0.8");
   console.log("Received parameter:", startParam);  // Добавлено для отладки
 }
 function myFunctionOne() {

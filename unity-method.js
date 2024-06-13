@@ -14,7 +14,7 @@ function sendMessageToUnity(unityInstance) {
 
   // Получаем параметр из URL
   const urlParams = new URLSearchParams(window.location.search);
-  const startParam = urlParams.get('start');
+  var startParam = urlParams.get('start');
 
   unityInstance.SendMessage('TG_info', 'SetId', tgId);
   unityInstance.SendMessage('TG_info', 'SetFirstName', tgFn);

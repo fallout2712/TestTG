@@ -25,7 +25,7 @@ function sendMessageToUnity(unityInstance) {
   unityInstance.SendMessage('TG_info', 'SetTgInit');
 
   // Debug message
-  console.log("Our app-kaaaa version is 0.8");
+  console.log("Our app-kaaaa version is 0.9");
   console.log("Received parameter:", startParam);
 }
 function inviteFriend(parameter) {

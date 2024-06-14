@@ -13,7 +13,7 @@ function sendMessageToUnity(unityInstance) {
   var tgLn = tg.initDataUnsafe?.user?.last_name;
 
   const initData = tg.initDataUnsafe;
-  const startParam = parseInt(initData.start_param) || 0;
+  const startParam = initData.start_param;
 
   console.log(`Параметр start_param: ${startParam}`);
   

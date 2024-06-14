@@ -28,10 +28,9 @@ function sendMessageToUnity(unityInstance) {
   console.log("Our app-kaaaa version is 0.8");
   console.log("Received parameter:", startParam);
 }
-function inviteFriend() {
-  console.log("inviteFriend complete");
-  var tgId = tg.initDataUnsafe?.user?.id;
-  const messageText = "t.me/SwixyKeyDrop_bot/DropKey?startapp=" + tgId;
+function inviteFriend(parameter) {
+  const messageText = "t.me/SwixyKeyDrop_bot/DropKey?startapp=" + parameter;
   const telegramLink = `https://t.me/share/url?url=${encodeURIComponent(messageText)}&text=`;
   tg.openTelegramLink(telegramLink);
+  console.log("inviteFriend complete");
 }

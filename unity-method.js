@@ -14,15 +14,11 @@ function sendMessageToUnity(unityInstance) {
 
   const initData = tg.initDataUnsafe;
   console.log("initData: ", initData); // Отладка данных инициализации
-  const startParam = initData.start_param;
-  
-  if (startParam) {
-    console.log(`Параметр start_param: ${startParam}`);
+  const startParam = initData.start_param || 0; // Устанавливаем start_param в 0, если он не найден
+
+  console.log(`Параметр start_param: ${startParam}`);
   unityInstance.SendMessage('TG_info', 'PassedValueUrl', startParam);
-  } else {
-    console.log("Параметр start_param не найден");
-  }
-  
+
   unityInstance.SendMessage('TG_info', 'SetId', tgId);
   unityInstance.SendMessage('TG_info', 'SetFirstName', tgFn);
   unityInstance.SendMessage('TG_info', 'SetLastName', tgLn);

@@ -18,15 +18,14 @@ function sendMessageToUnity(unityInstance) {
   
   if (startParam) {
     console.log(`Параметр start_param: ${startParam}`);
+  unityInstance.SendMessage('TG_info', 'PassedValueUrl', startParam);
   } else {
     console.log("Параметр start_param не найден");
-    startParam = 0;
   }
   
   unityInstance.SendMessage('TG_info', 'SetId', tgId);
   unityInstance.SendMessage('TG_info', 'SetFirstName', tgFn);
   unityInstance.SendMessage('TG_info', 'SetLastName', tgLn);
-  //unityInstance.SendMessage('TG_info', 'PassedValueUrl', startParam);
   unityInstance.SendMessage('TG_info', 'SetTgInit'); // Передаем параметр в Unity
 
   // Debug message

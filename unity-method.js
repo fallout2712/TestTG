@@ -17,11 +17,12 @@ function sendMessageToUnity(unityInstance) {
   const startParam = initData.start_param;
   
   if (startParam) {
-            console.log(`Параметр start_param: ${startParam}`);
-        } else {
-            console.log("Параметр start_param не найден");
-        }
-
+    console.log(`Параметр start_param: ${startParam}`);
+  } else {
+    console.log("Параметр start_param не найден");
+    startParam = 0;
+  }
+  
   unityInstance.SendMessage('TG_info', 'SetId', tgId);
   unityInstance.SendMessage('TG_info', 'SetFirstName', tgFn);
   unityInstance.SendMessage('TG_info', 'SetLastName', tgLn);

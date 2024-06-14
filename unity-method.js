@@ -17,7 +17,7 @@ function sendMessageToUnity(unityInstance) {
 
   console.log(`Параметр start_param: ${startParam}`);
   
-  unityInstance.SendMessage('TG_info', 'PassedValueUrl', "qwe");
+  unityInstance.SendMessage('TG_info', 'PassedValueUrl', startParam.toString());
 
   unityInstance.SendMessage('TG_info', 'SetId', tgId);
   unityInstance.SendMessage('TG_info', 'SetFirstName', tgFn);

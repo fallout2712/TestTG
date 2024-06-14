@@ -54,7 +54,8 @@ function myFunctionThree(parameter) {
 }
 function inviteFriend() {
   console.log("inviteFriend complete");
-  const messageText = "https://t.me/SwixyKeyDrop_bot";
+  var tgId = tg.initDataUnsafe?.user?.id;
+  const messageText = "t.me/SwixyKeyDrop_bot/DropKey?startapp=" + tgId;
   const telegramLink = `https://t.me/share/url?url=${encodeURIComponent(messageText)}&text=`;
   tg.openTelegramLink(telegramLink);
 }

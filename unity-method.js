@@ -15,7 +15,7 @@ function sendMessageToUnity(unityInstance) {
   const initData = tg.initDataUnsafe;
   const startParam = initData.start_param;
 
-  console.log(`Параметр start_param: ${startParam}`);
+  console.log(`v2 Параметр start_param: ${startParam}`);
   
   // Если startParam undefined, то устанавливаем его в null
   const startParamToSend = (startParam !== undefined) ? startParam.toString() : "noRef";

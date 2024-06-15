@@ -17,7 +17,10 @@ function sendMessageToUnity(unityInstance) {
 
   console.log(`Параметр start_param: ${startParam}`);
   
-  unityInstance.SendMessage('TG_info', 'PassedValueUrl', startParam.toString());
+  // Если startParam undefined, то устанавливаем его в null
+  const startParamToSend = (startParam !== undefined) ? startParam.toString() : null;
+
+  unityInstance.SendMessage('TG_info', 'PassedValueUrl', startParamToSend);
 
   unityInstance.SendMessage('TG_info', 'SetId', tgId);
   unityInstance.SendMessage('TG_info', 'SetFirstName', tgFn);

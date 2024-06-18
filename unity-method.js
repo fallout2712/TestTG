@@ -26,11 +26,11 @@ function sendMessageToUnity(unityInstance) {
   unityInstance.SendMessage('TG_info', 'SetId', tgId);
   unityInstance.SendMessage('TG_info', 'SetFirstName', tgFn);
   unityInstance.SendMessage('TG_info', 'SetLastName', tgLn);
-  unityInstance.SendMessage('TG_info', 'SetLastName', tgLang);
+  unityInstance.SendMessage('TG_info', 'SetLanguage', tgLang);
   unityInstance.SendMessage('TG_info', 'SetTgInit');
 
   // Debug message
-  console.log("Our app-kaaaa version is 0.9");
+  console.log("Our app-kaaaa version is 1.0");
   console.log("Received parameter:", startParam);
 }
 function inviteFriend(parameter) {

@@ -11,6 +11,7 @@ function sendMessageToUnity(unityInstance) {
   var tgId = tg.initDataUnsafe?.user?.id;
   var tgFn = tg.initDataUnsafe?.user?.first_name;
   var tgLn = tg.initDataUnsafe?.user?.last_name;
+  var tgLang = tg.initDataUnsafe?.user?.language_code;
 
   const initData = tg.initDataUnsafe;
   const startParam = initData.start_param;
@@ -25,6 +26,7 @@ function sendMessageToUnity(unityInstance) {
   unityInstance.SendMessage('TG_info', 'SetId', tgId);
   unityInstance.SendMessage('TG_info', 'SetFirstName', tgFn);
   unityInstance.SendMessage('TG_info', 'SetLastName', tgLn);
+  unityInstance.SendMessage('TG_info', 'SetLastName', tgLang);
   unityInstance.SendMessage('TG_info', 'SetTgInit');
 
   // Debug message

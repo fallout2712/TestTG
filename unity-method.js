@@ -16,7 +16,7 @@ function sendMessageToUnity(unityInstance) {
   const startParam = initData.start_param;
 
   console.log(`v2 Параметр start_param: ${startParam}`);
-  
+
   // Если startParam undefined, то устанавливаем его в null
   const startParamToSend = (startParam !== undefined) ? startParam.toString() : "noRef";
 
@@ -36,4 +36,9 @@ function inviteFriend(parameter) {
   const telegramLink = `https://t.me/share/url?url=${encodeURIComponent(messageText)}&text=`;
   tg.openTelegramLink(telegramLink);
   console.log("inviteFriend complete");
+}
+function subscriptionOnGroupOne() {
+  const groupLink = "https://t.me/keydrop_test";
+  Telegram.WebApp.openTelegramLink(groupLink);
+  console.log("subscriptionOnGroupOne open complete");
 }
